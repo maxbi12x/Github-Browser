@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:outlineSpotShadowColor="@color/black"
+    android:padding="5dp"
+    android:layout_marginBottom="2dp"
+    android:background="@color/grey">
+    <TextView
+        android:id="@+id/issueTv"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:textSize="20sp"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:text="Title of the issue in maximum two lines"
+        android:ellipsize="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/issueTv"
+        android:paddingLeft="10dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/black"
+            />
+        <TextView
+            android:id="@+id/tvIssueCreator"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Issue Creator"
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

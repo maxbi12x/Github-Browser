@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Github Browser</string>
+    <string name="issues">Issues(0)</string>
+    <string name="branches">Branches</string>
+    <string name="details">Details</string>
+    <string name="commits">Commits</string>
+    <string name="add_repo">Add Repo</string>
+    <string name="owner_organization">Owner/Organization</string>
+    <string name="repository_name">Repository Name</string>
+</resources>
