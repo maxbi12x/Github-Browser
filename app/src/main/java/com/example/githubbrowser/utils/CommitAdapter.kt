@@ -9,6 +9,10 @@ import com.bumptech.glide.Glide
 import com.example.githubbrowser.R
 import com.example.githubbrowser.responsemodels.CommitModel
 import kotlinx.android.synthetic.main.commit_list_item.view.*
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 open class CommitAdapter(
     private val context: Context,
@@ -29,7 +33,12 @@ open class CommitAdapter(
         val model = list[position]
 
         if (holder is MyViewHolder) {
-            holder.itemView.tvDate.text = model.commit.committer.date
+
+            val originalFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
+            val targetFormat: DateFormat = SimpleDateFormat("dd MMMM yy", Locale.ENGLISH)
+            val date: Date = originalFormat.parse(model.commit.committer.date.split('T')[0])
+            val formattedDate: String = targetFormat.format(date)
+            holder.itemView.tvDate.text = formattedDate
             holder.itemView.tvMessage.text = model.commit.message
             holder.itemView.tvCommiter.text = if (model.committer.login == "web-flow") {
                 Glide.with(context).load(model.author.avatar_url)
